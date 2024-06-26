@@ -1,13 +1,21 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side,#47ff7e 94%,#0000) top/9px 9px no-repeat,
+         conic-gradient(#0000 30%,#47ff91);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+  animation: spinner-c7wet2 1s infinite linear;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes spinner-c7wet2 {
+  100% {
+     transform: rotate(1turn);
+  }
 }
+
+
